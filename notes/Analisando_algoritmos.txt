@@ -1,0 +1,167 @@
+!Qualquer algoritmo escrito nessas anotações serão feitas utilizando Python!
+
+A análise de algoritmos é um campo fundamental da ciência da computação. A razão para isso é que a base da programação deriva da criação, análise e aplicação de algoritmos, que 
+estão presentes não só em softwares(em sua maioria esmagadora), como também em partes da matemática e até mesmo no dia a dia(como receitas por exemplo). O conceito de algoritmo está
+intrinsecamente conectado ao conceito de computação, que nada mais é do que fornecer ao computador algum tipo de dado para que ele realize cálculos e forneça uma resposta. A base 
+de tais cálculos são os algoritmos computacionais. Portanto, algoritmos e computação são dois conceitos que se implicam mutuamente.
+
+Para analisar algoritmos, talvez o método mais "lógico" e instintivo seria começar por quanto tempo um algoritmo leva para ser executado. Mas esse método não é muito eficiente pelo
+seguinte motivo: Existem muitas variáveis que não permitem um cálculo preciso do tempo de execução. Por exemplo, o mesmo algoritmo executado no mesmo computador pode ter um tempo
+de execução diferente, se executado várias vezes(o motivo para isso é que um computador varia em poder de processamento com muita frequência). Da mesma forma, linguagens de 
+programação podem variar em velocidade, fazendo com que um algoritmo escrito em linguagem A tenha um tempo de execução diferente do mesmo algoritmo escrito em linguagem B.
+Portanto, é possível concluir que analisar a eficiência de um algoritmo pelo seu tempo de execução não oferece muita precisão de cálculo.
+
+Por isso, na realidade, é utilizado a análise do número de etapas que um algoritmo leva para ser executado. Essa análise vem com mais eficiência(mas ainda com suas exceções) já que
+o número de etapas de um algoritmo não varia de acordo com o computador ou com a linguagem de programação. Ainda assim, pode variar de acordo com condições dentro do próprio 
+algoritmo, como por exemplo, se uma parte do algoritmo será executada ou não dependendo de uma condição específica(que são as condicionais no mundo da programação). 
+
+A utilização do número de etapas permite uma visualização mais analítica de um algoritmo, podendo ser expressa em uma notação matemática. Vamos a um exemplo de algoritmo simples, e 
+analisar o seu número de etapas:
+
+    *
+        for i in range(1, 6):
+            print(i)
+    *
+
+Esse algoritmo simples produz o mesmo resultado todas as vezes: os números de 1 a 5 no terminal. Agora, analisando o seu número de etapas podemos perceber que, como não existe 
+nenhum tipo de condição, levará sempre 5 etapas para ser concluído. Podemos expressar isso em uma equação matemática, também simples, que exemplifica o número de etapas do 
+algoritmo:
+
+    E = 5; onde 'E' significa Etapas.
+
+Portanto, temos um algoritmo que sempre terá 5 etapas, e representamos essa relação(de um algoritmo e suas etapas) tanto em sua forma programática quanto matemática. 
+
+Avançando um pouco nesse conceito, podemos alterar o algoritmo escrito logo acima, para ver o que aconteceria com a nossa equação de etapas:
+
+    *
+        count = 0
+        for i in range(1, 6):
+            print(i)
+    *
+
+No algoritmo acima, que também é extremamente simples, foi adicionado uma nova instrução. Pois então, como ficaria a nossa equação que representa o número de etapas de um algoritmo?
+
+    E = 5 + 1 = 6; ou seja: temos 6 etapas no total
+
+Na equação acima percebemos que temos uma representação do número de etapas que existe dentro do loop(no caso 5) e agora consideramos também uma nova etapa que foi adicionada logo 
+acima do loop(no caso, o número 1). Então, teremos cinco etapas somadas a uma etapa, resultando em seis etapas no total.
+
+Alterando mais um pouco o nosso algoritmo:
+
+    *
+        count = 0
+        for i in range(1, 6):
+            print(i)
+            count += 1
+    *
+
+Agora temos duas instruções dentro do loop. Como essas duas instruções são executadas 5 vezes cada, temos 5 + 5, ou seja, 5 x 2. Nossa equação de etapas então foi modificada da 
+seguinte forma:
+
+    E = 2 x 5 + 1; ou seja: temos 11 etapas no total
+
+Com apenas uma adição de uma única instrução no loop, nosso novo algoritmo agora tem praticamente o dobro do número de etapas do algoritmo anterior. Note também que no último 
+exemplo, podemos perceber uma relação interessante: Para saber o número de etapas a serem executadas dentro de um loop, basta multiplicar a quantidade de instruções no loop pelo 
+número de repetições do loop. No exemplo são duas instruções no loop que irá repetir 5 vezes, portanto, 5 x 2.
+
+Como provavelmente a lógica da análise de algoritmos através do estudo de suas etapas já foi entendida com os três últimos exemplos, podemos dar um passo adiante e considerar uma 
+situação específica: O que aconteceria se não soubéssemos o número de repetições do loop?
+
+Considere o seguinte algoritmo simbólico:
+
+    *
+        count = 0
+        for i in range(1, x):
+            print(i)
+            count += 1
+    *
+
+Nesse exemplo não sabemos quantas repetições o loop faria, já que a variável x não foi definida(aqui, considere x como uma ideia matemática de variável e não uma variável da
+programação). Porém, seguindo a mesma lógica do exemplo anterior, nossa equação ficaria da seguinte forma:
+
+    E = 2x + 1; (duas instruções multiplicadas pelo número de iterações do loop, como vimos)
+
+Essa incógnita pode ser muito grande ou muito pequena, ou seja, dependendo do seu tamanho teremos um número de etapas grande ou pequeno. Com isso, podemos definir uma função para o
+nosso algoritmo:
+
+    f(x) = 2x + 1; onde f(x) corresponde ao número de etapas do algoritmo
+
+Em ciência da computação, uma variável que define o tamanho do número de etapas de um algoritmo é chamada de "Tamanho do Problema". No nosso novo algoritmo, a variável x é o nosso 
+tamanho do problema. Então, a nossa função é uma que define o número de etapas(f(x)) que está em função do tamanho do problema(x). Em outras palavras: O número de etapas do nosso 
+algoritmo depende essencialmente do tamanho do problema, que representa o número de vezes que o loop irá se repetir. 
+
+
+--
+
+
+Continuando nossa análise de alguns algoritmos, veja o algoritmo abaixo:
+
+    *
+        print("analisando")
+        
+        for i in range(1, 11):       # loop 1
+            print(i)
+
+        for i in range(1, 11):       # loop 2
+            for j in range(1, 11):
+                for k in range(1, 11):
+                    print("estou dentro de 3 loops aninhados")
+    *
+
+Esse algoritmo, bem mais complexo do que os anteriores, nos apresentará um conceito importante. Vamos, primeiro, montar a nossa equação do número de etapas:
+
+    E = 1 + 10 + 10 x 10 x 10 = 11 + 10³ = 1011;
+    (aqui, como não há nenhum valor indefinido, não existe a necessidade de utilizar a notação de função)
+
+    -> Explicando a equação: Como vimos, uma instrução sozinha é um valor unitário, e para descobrir o valor de um loop multiplicamos o número de instruções pelo número de
+    repetições. Portanto, primeiro loop vale 10, já que 1 x 10 = 10. Já o segundo contém um loop de 10 repetições, que por sua vez também contém um loop de 10 repetições. Como 
+    cada um dos três loops terão uma execução de 10 repetições, temos: 1 x 10 x 1 x 10 x 1 x 10 = 10 x 10 x 10 = 10³.
+
+Sabemos então, que esse algoritmos mais complexo terá 1011 etapas. Acontece que, se fizermos o mesmo exercício de raciocínio que fizemos no exemplo anterior, onde substituímos 
+valores por varíaveis, podemos representar o algoritmo da seguinte forma:
+
+    *
+        print("analisando")
+        
+        for i in range(1, x):       # loop 1
+            print(i)
+
+        for i in range(1, x):       # loop 2
+            for j in range(1, x):
+                for k in range(1, x):
+                    print("estou dentro de 3 loops aninhados")
+    *
+
+Pela lógica já explicada, nossa equação(agora como função) ficaria da seguinte forma:
+
+    f(x) = x + x³
+    teremos então que o número de etapas será a soma do tamanho do problema pelo tamanho do problema ao cubo. 
+
+Se repararmos bem, podemos ver que uma parte da função irá crescer exponencialmente em relação a outra. Em outras palavras, significa que ao aumentar o tamanho do problema, uma 
+parte da função irá ofuscar a outra parte, fazendo com que o seu número se torne, de certa forma, irrelevante.
+
+Vamos definir alguns tamanhos do problema nessa mesma função:
+
+    f(10) = 10 + 1000
+    f(100) = 100 + 1 000.000
+    f(1000) = 1000 + 1.000.000 000 (bilhão)
+    f(10000) = 10.000 + 1.000.000.000.000 (trilhão)
+
+Ou seja, se tivessemos aplicando o nosso algoritmo sobre uma base de dados com 10.000 itens, ele levaria 1 trilhão de etapas para executar. Aliás, uma base de dados com 10.000 itens
+é considerada uma base de dados pequena. Na realidade é muito comum realizar operações em bases de dados com centenas de milhares ou milhões de itens(e até mais). Fica claro então,
+que é necessário observar apenas uma parte da função para conseguir identificar a eficiência do algoritmo. Em outras palavras: A parte exponencial da função ofuscou a outra parte, 
+pelo menos dentro do contexto de análise de etapas de um algoritmo. Na minha própria descrição da função fica claro que um termo ofusca o outro, já que eu disse que "ele levaria 
+1 trilhão de etapas para executar" e não "ele levaria 1 trilhão e 10 mil etapas para executar".
+
+A situação em que um termo da função ofusca o outro é tão comum em análise de algoritmos, que uma notação própria foi criada para isso: Notação Big O(Big O Notation). Essa notação
+leva em conta apenas a parte "mais importante" da função, também conhecida como ordem de grandeza da função. De uma forma mais simples, a notação big O surgiu para que fosse 
+possível analisar algoritmos, considerando apenas a sua ordem de grandeza, de forma mais eficiente e intuitiva. Portanto, em notação Big O, diríamos que a nossa função seria:
+
+    O(x³)
+    (note que está sendo considerado apenas x³ e não x + x³)
+
+Existe todo um sistema de classificação de ordens de grandeza, onde a diferença significa que o algoritmo está muitas vezes acima ou abaixo do outro, em termos de número de etapas 
+a serem executadas. Tal sistema é uma excelente forma de conseguir analisar e comparar a eficiência de algoritmos, levando em conta apenas suas ordens de grandeza, desconsiderando
+os termos que não serão relevantes à analise.
+
+Esse sistema será visto em outra anotação.
