@@ -117,7 +117,7 @@ Esse algoritmo, bem mais complexo do que os anteriores, nos apresentará um conc
     repetições. Portanto, primeiro loop vale 10, já que 1 x 10 = 10. Já o segundo contém um loop de 10 repetições, que por sua vez também contém um loop de 10 repetições. Como 
     cada um dos três loops terão uma execução de 10 repetições, temos: 1 x 10 x 1 x 10 x 1 x 10 = 10 x 10 x 10 = 10³.
 
-Sabemos então, que esse algoritmos mais complexo terá 1011 etapas. Acontece que, se fizermos o mesmo exercício de raciocínio que fizemos no exemplo anterior, onde substituímos 
+Sabemos então, que esse algoritmo mais complexo terá 1011 etapas. Acontece que, se fizermos o mesmo exercício de raciocínio que fizemos no exemplo anterior, onde substituímos 
 valores por varíaveis, podemos representar o algoritmo da seguinte forma:
 
     *
@@ -154,7 +154,7 @@ pelo menos dentro do contexto de análise de etapas de um algoritmo. Na minha pr
 1 trilhão de etapas para executar" e não "ele levaria 1 trilhão e 10 mil etapas para executar".
 
 A situação em que um termo da função ofusca o outro é tão comum em análise de algoritmos, que uma notação própria foi criada para isso: Notação Big O(Big O Notation). Essa notação
-leva em conta apenas a parte "mais importante" da função, também conhecida como ordem de grandeza da função. De uma forma mais simples, a notação big O surgiu para que fosse 
+leva em conta apenas a parte "mais importante" da função, também conhecida como Ordem De Grandeza da função. De uma forma mais simples, a notação big O surgiu para que fosse 
 possível analisar algoritmos, considerando apenas a sua ordem de grandeza, de forma mais eficiente e intuitiva. Portanto, em notação Big O, diríamos que a nossa função seria:
 
     O(x³)
