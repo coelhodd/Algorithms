@@ -1,0 +1,118 @@
+Como foi especificado no final do arquivo 'analysing_algorithms.txt', a notação Big O representa a parte mais importante do algoritmo, que é a sua ordem de grandeza. Com isso, temos
+um sistema que analisa e classifica diversas ordens de grandeza de algoritmos, onde a diferença entre cada um representa um número de etapas muitas vezes maior ou menor. 
+Analisaremos nessas anotações quais são as ordens de grandeza mais relevantes ao início dos nossos estudos.
+
+-- 
+
+Antes de iniciar nossos estudos sobre as ordens de grandeza dos algoritmos, devemos primeiro determinar a função da análise de uma ordem de grandeza de um algoritmo.
+
+-> Quando analisamos uma função determinante do número de etapas de um algoritmo, a sua ordem de grandeza(o termo mais relevante para a análise) descreve o que é chamado de 
+Complexidade de Tempo de um algoritmo. A Complexidade de Tempo de um algoritmo é um indicador do número máximo de etapas que um algoritmo executa, quando o tamanho do problema 
+aumenta. Em outras palavras, a complexidade de tempo de um algoritmo é um determinante do maior número de etapas que o algoritmo executará. Portanto, é comum lidar com a análise 
+de algoritmos não só em termos de número de etapas, mas sim em quantidade de tempo que levaria para as etapas serem executadas(o tempo em função da quantidade de etapas).
+
+*
+    NOTA: Na primeira anotação("analysing_algorithms.txt") foi estabelecido que a consideração do tempo, de forma pura, para análise da eficiência de um algoritmo não é algo que
+    nos permite precisão por existir muitas variáveis. Então, o parágrafo acima não está entrando em contradição com esse fato, já que a complexidade de tempo mencionada é uma 
+    análise do tempo de execução EM RELAÇÃO ao número de etapas. Ou seja, o tempo de forma pura não está sendo considerado.
+
+    Por exemplo: É possível analisar um algoritmo em termos de complexidade de tempo, mesmo que tal algoritmo seja considerado em diferentes linguagens de programação, ou em 
+    sistemas computacionais também diferentes. O motivo para isso é que, a complexidade de tempo leva em conta o número de etapas do algoritmo de qualquer forma, e não apenas o 
+    tempo de forma singular.
+
+*
+
+--
+
+Complexidade de Tempo Constante O(1):
+
+    A ordem de grandeza mais eficiente, em termos de tempo, é chamada de Complexidade de Tempo Constante. Nessa ordem de grandeza, o número de etapas a serem executadas será sempre
+    a mesma. Isso faz com que o tempo de execução do algoritmo, em função do tamanho do problema, seja constante.
+
+    * Note que em todas as ordens de grandeza, estamos considerando o tempo em função do tamanho do problema! *
+
+    Exemplo de um algoritmo com complexidade de tempo constante:
+
+        Digamos que seja necessário escrever um algoritmo para acessar o primeiro elemento de uma lista. Nesse caso, nosso algoritmo seria algo como:
+
+            primeiro = lista[0]
+
+        Esse algoritmo é constante porque, independente do tamanho da lista, só precisamos de uma única instrução para acessar o primeiro elemento. Tal lista pode ter 10, 100, 1000
+        ou 1 trilhão de elementos. O nosso algoritmo terá sempre uma única instrução, portanto, o aumento do tamanho do problema não altera o tempo de execução.
+
+
+Complexidade de Tempo Logarítmica O(log n):
+
+    A ordem de grandeza logarítmica é um indicador de que, conforme o tamanho do problema aumenta, o número de etapas a serem executadas cresce cada vez mais devagar. Isso 
+    significa que um algoritmo de complexidade logarítmica é um que trabalha de forma eficiente quando o tamanho do problema cresce.
+
+    Exemplo de um algoritmo com complexidade de tempo logarítmica:
+
+        O algoritmo de busca binária é um algoritmo de complexidade de tempo logarítmica.
+        (A funcionalidade da busca binária será explicada em outra anotação)
+
+    
+Complexidade de Tempo Linear O(n):
+
+    Talvez a mais simples da complexidades de tempo, depois da complexidade constante, a ordem de grandeza linear é um indicador de que o tempo de execução acompanha exatamente 
+    a proporção do tamanho do problema. Em outras palavras, conforme o tamanho do problema aumenta, o seu tempo de execução(e seu número de etapas) também aumenta no mesmo ritmo.
+
+    Voltando ao nosso primeiro exemplo da lista: Digamos que ao invés de querer acessar o primeiro elemento da lista, seja necessário percorrer toda a lista, elemento por elemento.
+    Fica claro que, conforme o tamanho do problema aumenta(tamanho da lista), o número de etapas também aumentará no mesmo ritmo.
+
+
+Complexidade de Tempo Log-Linear O(n x log n):
+
+    Essa complexidade é uma combinação das ordens de grandeza linear e logaritma. Em termos um pouco técnicos, esse algoritmo é um indicador de que o tempo de execução cresce 
+    proporcionalmente ao tamanho do problema multiplicado pelo log do tamanho do problema. 
+
+    De forma geral, um algoritmo log-linear tem como procedimento padrão separar uma base de dados em pedaços menores, e os processa-los independentementes.
+
+    Exemplo de um algoritmo log-linear:
+        Alguns algoritmos de ordenação mais eficientes carregam essa complexidade, como o merge-sort.
+        (A funcionalidade do merge-sort será explicada em outra anotação)
+
+
+Complexidade de Tempo Quadrático O(n²):
+
+    A ordem de grande quadrática é a complexidade que estipula que a complexidade de tempo aumenta conforme o quadrado do tamanho do problema. É fácil de perceber que essa 
+    complexidade de tempo é uma das menos eficientes, já que teremos o quadrado do tamanho do problema, ou seja, se n for grande demais a complexidade será o quadrado de "grande 
+    demais".
+
+    Como uma regra geral, é comum determinar se uma algoritmo tem sua eficiência como quadrática, quando possui dois loops aninhados. Quando isso acontece, ele é no mínimo
+    quadrático.
+
+
+Complexidade de Tempo Cúbico O(n³):
+
+    Assim como o tempo quadrático, o tempo cúbico estipula que a eficiência do algoritmo cresce com o cubo do tamanho do problema. A mesma explicação do algoritmo quadrático vale 
+    para o algoritmo cúbico. A diferença é que o segundo é ainda menos eficiente, já que estamos considerando o cubo de n.
+
+    Também, como uma regra geral, um algoritmo cúbico é um algoritmo que carrega três loops aninhados. Quando isso acontece, ele é no mínimo cúbico.
+
+
+Complexidade de Tempo Exponencial O(c**n):
+
+    O troféu de complexidade de tempo menos eficiente vai para a Complexidade de Tempo Exponencial. O motivo para isso é que, nessa ordem de grandeza, temos uma constante elevada
+    ao tamanho do problema(c**n). No caso, o valor da constante não importa, mas sim que ela está elevada ao tamanho do problema.
+
+    Um exemplo clássico para um algoritmo exponencial é a tentativa de adivinhar uma senha de n dígitos decimais, com cada combinação possível. Com isso, teríamos 10**n, ou seja, 
+    um algoritmo exponencial. A característica da ordem de grandeza exponencial é que ela cresce rápido demais conforme o tamanho do problema aumenta, rapidamente se tornando 
+    inviável. Por exemplo, em 10**n, quando n for 3, temos 1000 etapas. Já quando n for 8 teríamos 100 milhões de etapas. Ou seja, o crescimento exponencial é completamente 
+    inviável em termos de eficiência algorítmica, quando o tamanho do problema começa a crescer.
+
+
+-- 
+
+
+Sobre melhores e piores casos:
+
+    Frequentemente, quando falamos de algoritmos, não necessariamente um algoritmo qualquar terá sempre o mesmo desempenho. Por exemplo, um algoritmo linear pode ser melhor que 
+    um algoritmo logarítmico, dependendo do caso. Quando esse tipo de coisa acontece, estamos falando de melhores e piores casos.
+
+    Imagine que precisamos procurar um item em uma lista. Podemos dar a sorte de encontrar o item procurado logo na primeira tentativa, sendo o melhor caso possível. Da mesma forma,
+    podemos dar o azar de o item nem estar na lista, sendo assim o pior caso possível. Nessa situação, se tivessemos utilizado um algoritmo linear para a busca, no melhor caso, a 
+    eficiência não teria sido tão diferente de um algoritmo logarítmico por exemplo. Já no pior caso, o algoritmo linear sofreria bastante, principalmente se comparado com outros
+    mais eficientes. 
+    
+    Portanto, fica claro que uma análise completa de algoritmos envolve a análise de pior e melhor caso de cada algoritmo.
