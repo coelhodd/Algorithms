@@ -1,0 +1,102 @@
+Um conceito importante quando iniciamos os estudos sobre algoritmos é o de recursão. Entender um algoritmo recursivo nos permite escrever algoritmos de forma mais concisa e
+elegante, dependendo da ocasião.
+
+O que é Recursão:
+
+    A recursão é uma técnica que utiliza de funções que chamam a si mesmas para simular um loop tradicional(como 'while' ou 'for'). É importante saber que, qualquer solução 
+    iterativa pode ser representada não só pelos loops comuns, mas também por funções recursivas. Muitas das vezes, utilizar a recursão ao invés de uma solução iterativa padrão, 
+    nos permite escrever um código mais eficiente e menos verboso. 
+
+    Quando falamos de Recursão, devemos seguir 3 regras principais:
+
+        1- O algoritmo recursivo deve ter um caso base;
+        2- O algoritmo recursivo deve alterar o seu próprio estado e prosseguir em direção ao caso base;
+        3- O algoritmo recursivo deve chamar a si mesmo recursivamente;
+
+    Falaremos sobre cada regra com mais detalhes a seguir, e exibiremos um algoritmo recursivo para melhor entendimento no final.
+
+        1- O algoritmo recursivo deve ter um caso base:
+
+            O caso base de um algoritmo recursivo é uma situação definida que permite a saída da recursão, para que a função não se chame infinitamente sem resultados. De forma
+            análoga, é o mesmo que uma condição de saída de um loop 'while', por exemplo.
+
+        2- O algoritmo recursivo deve alterar o seu próprio estado e prosseguir em direção ao caso base:
+
+            Em uma função que chama a si mesma, é necessário que ela altere o seu próprio estado(normalmente o seu próprio input), de tal forma que essa alteração faça com que ela 
+            vá em direção ao caso base. Em outras palavras: uma função recursiva deve, ao final de cada chamada, estar mais próxima do caso base do que estava antes. O motivo para 
+            isso é claro: Uma função recursiva que não vai em direção ao caso base irá se repetir infinitamente.
+
+        3- O algoritmo recursivo deve chamar a si mesmo recursivamente:
+
+            Apesar de isso ser óbvio, por definição, um algoritmo recursivo só é recursivo se ele se encontra dentro de uma função(ou objeto) que chama a si mesmo.
+
+
+    Agora, vamos a um exemplo simples de um algoritmo recursivo:
+
+        Imagine que queremos imprimir no terminal os números de 1 a 10. Esse é um problema que envolverá um algoritmo iterativo, e como vimos na definição, qualquer solução 
+        iterativa pode ser representada não só pelos loops comuns, mas também por funções recursivas. Portanto, teremos duas soluções óbvias: Um algoritmo iterativo 'padrão' e um 
+        algoritmo recursivo. Vejamos uma algoritmo iterativo clássico para um problema como esse:
+
+            n = 1
+            while n <= 10:
+                print(n)
+                n += 1
+
+        No algoritmo acima, utilizamos uma estrutura de código tradicional como o loop 'while'(poderíamos utilizar outras estruturas também). Agora vamos verificar uma solução 
+        recursiva para esse problema:
+
+            def rec(n):
+                print(n)
+                if n == 10:
+                    return
+                return rec(n+1)
+
+        O exemplo acima define uma função 'rec' que receberá um input 'n'. No corpo da função temos duas instruções importantes: Primeiro o caso base, onde estipulamos um ponto de 
+        parada para a função, que nesse caso é se o valor do input for 10. Segundo, definimos que o valor de retorno da função é a própria função com seu input somado por 1. Isso
+        faz com que a função se chame até que o valor do input seja 10, onde o loop irá terminar.
+
+        Demonstrando o passo a passo das chamadas da função recursiva:
+
+            Primeira chamada -> rec(6)
+
+            -> print(6); 6 == 10 é falso; chama rec(6+1)
+
+            rec(7)
+            -> print(7); 7 == 10 é falso; chama rec(7+1)
+
+            rec(8)
+            -> print(8); 8 == 10 é falso; chama rec(8+1)
+
+            rec(9)
+            -> print(9); 9 == 10 é falso; chama rec(9+1)
+
+            rec(10)
+            -> print(10); 10 == 10 é verdadeiro; retorna para o chamador da função;
+
+        Note que com esse passo a passo fica claro o funcionamento da função recursiva, onde estabelecemos um caso base, a função então vai em direção a tal caso base e por fim 
+        chama a si mesma, executando as três regras da recursão.
+
+        Apesar de ser um exemplo simples para entender a recursão, não fica claro a vantagem de utilizar essa técnica, já que não existe muita diferença de tamanho entre um 
+        algoritmo e outro. Por isso, vamos dar um segundo exemplo, onde demonstramos um algoritmo para calcular o fatorial de um número:
+
+            (algoritmo iterativo padrão)
+
+                def factorial(n):
+                    product = 1
+                    while n > 0:
+                        product = product * n
+                        n = n - 1
+                    return product 
+
+            
+
+            (algoritmo recursivo)
+
+                def factorial_rec(n):
+                    if n == 0:
+                        return 1
+                    return n * factorial_rec(n-1)
+
+        
+        Perceba a diferença no código entre um algoritmo iterativo e um algoritmo recursivo! Nesse caso fica claro que a complexidade é bem menor, aumentando a legibilidade do 
+        código e eficiência. 
