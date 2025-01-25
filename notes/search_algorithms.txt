@@ -1,0 +1,56 @@
+Como um programador profissional, é necessário trabalhar com dados na maior parte do tempo. Isso faz com que existam operações
+muito comuns que são aplicadas em cima de conjuntos de dados(coleção de dados). Uma dessas operações é a de busca de um dado 
+específico(dentre várias outras).
+
+Cientistas da computação buscam dados da seguinte forma: Há um algoritmo de busca que, como o nome sugere obviamente, busca um 
+dado específico em um conjunto de dados. Esse algoritmo é então aplicado sobre o conjunto e a saída é o resultado, seja o dado
+em si, como também a informação de que ele não está presente.
+
+Algoritmos de busca são extremamente comuns no mundo da ciência da computação, e é do que trataremos nessa anotação.
+
+Vale mencionar também que, apesar de ser possível programar um algoritmo de busca do zero em uma linguagem de programação 
+qualquer, muitas delas já vêm com o algoritmo embutido pronto para uso. No caso de Python, que é a linguagem que estamos
+utilizando para estudar os algoritmos, já existe um algoritmo de busca embutido na linguagem. Porém, claro que iremos aprender
+a programar do zero, já que é uma habilidade importante!
+
+Por enquanto vamos estudar dois algoritmos de busca: O algoritmo de busca linear e o algoritmo de busca binária.
+
+--
+
+Algoritmo de Busca Linear:
+
+   Talvez o algoritmo mais simples de todos é o algoritmo de busca linear, também conhecido como algoritmo de busca sequencial.
+   Nesse algoritmo, teremos um conjunto de dados qualquer(uma lista, uma tabela, etc...) e teremos um elemento de interesse.
+   Iremos então analisar cada elemento desse conjunto de dados e compara-lo com o nosso alvo. Se acharmos, nos é retornado 
+   alguma informação sobre o elemento alvo, senão, nos é informado que o elemento não está presente no conjunto de dados.
+
+   Note que o conceito chave aqui é: A comparação sequencial de elementos. Em outras palavras, comparamos elementos um a um com
+   o nosso elemento alvo.
+
+   Eis um exemplo de um algoritmo de busca linear:
+
+      def linear(lista, elemento):
+         for i in lista:
+            if i == elemento:
+               return True
+	 return False
+
+   No algoritmo logo acima, utilizaremos uma comparação linear(sequencial) onde compararemos cada elemento da lista passada com
+   o elemento em questão. Se a comparação for verdadeira, a função retornará verdadeiro, do contrário, retornará falso.  
+
+   Como foi dito no arquivo 'orders_of_magnitude.txt', quando analisamos a eficiência de um algoritmo, para que essa análise 
+   seja completa, devemos levar em conta os melhores e piores cenários desse mesmo algoritmo. No caso de um algoritmo linear,
+   o melhor cenário é quando o elemento alvo é o primeiro elemento do conjunto de dados. Nessa situação, um algoritmo linear
+   tem complexidade de tempo como O(1), ou seja, é constante(o tamanho do problema não altera a sua complexidade de tempo).
+   Porém, em seu pior cenário, onde o elemento buscado não está presente no conjunto de dados, um algoritmo linear tem sua 
+   complexidade de tempo como O(n), ou seja, é linear(a complexidade de tempo aumenta no mesmo ritmo que o tamanho do problema).
+   Na média, porém, um algoritmo sequencial tem complexidade O(n/2), que é também O(n), ou seja, linear.
+
+   Essa análise, do melhor e pior cenário, nos permite realizar uma tomada de decisão mais informada, de acordo com o nosso 
+   contexto. Pode ser que, dependendo do contexto, um algoritmo linear seja extremamente ineficiente, ou extremamente eficiente.
+   
+   Quando aplicamos um algoritmo de busca linear?
+      Um algoritmo de busca linear é melhor aplicado quando o conjunto de dados não é ordenado, ou seja, não apresenta nenhum
+      tipo de ordem(como numérica, alfabética, etc...). Quando um conjunto de dados é ordenado, um outro algoritmo de busca é
+      mais eficiente(o de busca binária), que veremos a seguir.
+
