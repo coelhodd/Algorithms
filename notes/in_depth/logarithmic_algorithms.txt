@@ -1,0 +1,24 @@
+Nessa anotação, veremos o que significa um algoritmo ser logarítmico, um pouco mais afundo.
+
+--
+
+Como vimos em outras anotações, sabemos que um algoritmo pode ter sua complexidade de tempo como logarítmico. Esse tipo de 
+algoritmo é muito eficiente quando aplicado sobre conjuntos de dados grandes, já que quanto maior o tamanho do problema, mais
+devagar o número de etapas cresce. Em outras palavras: A eficiência é alta quando estamos lidando com grandes volumes de dados.
+
+Mas o que, na verdade, significa um algoritmo logarítmico?
+
+Primeiro, devemos entender o que é um logaritmo(a operação matemática):
+
+	Um logaritmo nada mais é do que o inverso da exponenciação. Por exemplo, quando queremos saber quanto é 2³, estamos 
+	falando da operação de exponenciação. Quando trabalhamos com exponentes dessa forma, estamos essencialmente nos
+	perguntando "Se eu multiplicar o número 2 por si mesmo 3 vezes, qual é o resultado?".
+
+	No caso de um logaritmo, estamos realizando a pergunta inversa: "Quantas vezes eu tenho que multiplicar um número por 
+	ele mesmo, para que eu tenha x?". Por exemplo, digamos que eu queira achar o logaritmo de 8. Isso na prática significa
+	2^x = 8, ou seja, o "x" da questão está no exponente, e não após o sinal de igual. Estamos então, querendo saber o 
+  	logaritmo de 8 na base 2, ou seja, quantas vezes devemos multiplicar o 2 por si mesmo para que tenhamos o número 3.
+
+	Portanto, o logaritmo é o processo inverso da operação de exponenciação.
+
+
