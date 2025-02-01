@@ -14,11 +14,39 @@ Primeiro, devemos entender o que é um logaritmo(a operação matemática):
 	falando da operação de exponenciação. Quando trabalhamos com exponentes dessa forma, estamos essencialmente nos
 	perguntando "Se eu multiplicar o número 2 por si mesmo 3 vezes, qual é o resultado?".
 
-	No caso de um logaritmo, estamos realizando a pergunta inversa: "Quantas vezes eu tenho que multiplicar um número por 
-	ele mesmo, para que eu tenha x?". Por exemplo, digamos que eu queira achar o logaritmo de 8. Isso na prática significa
-	2^x = 8, ou seja, o "x" da questão está no exponente, e não após o sinal de igual. Estamos então, querendo saber o 
-  	logaritmo de 8 na base 2, ou seja, quantas vezes devemos multiplicar o 2 por si mesmo para que tenhamos o número 3.
+	No caso de um logaritmo, estamos fazendo a pergunta inversa: "Quantas vezes eu tenho que multiplicar um número por 
+	ele mesmo, para que eu tenha x?". Por exemplo, digamos que eu queira achar o logaritmo de 8 na base 2. Isso na prática
+        significa 2^x = 8, ou seja, o "x" da questão está no exponente, e não após o sinal de igual. Estamos então, querendo
+        saber quantas vezes devemos multiplicar o 2 por si mesmo para que tenhamos o número 8.
 
 	Portanto, o logaritmo é o processo inverso da operação de exponenciação.
 
 
+Agora que sabemos o que é um logaritmo, podemos entender o que significa um algoritmo logarítmico:
+
+	Como vimos, analisamos a eficiência de um algoritmo pela sua complexidade de tempo em relação ao tamanho do problema.
+	Quando um algoritmo é logarítmico, o número de etapas aumenta com o logaritmo do tamanho do problema. Um outro ponto
+	importante é que a base do logaritmo é definida de acordo a constante que é utilizada para realizar as divisões no 
+	algoritmo. No caso de uma busca binária, por exemplo, dividimos sempre o conjunto pela metade, ou seja, nosso logaritmo
+	será de base 2. 
+
+	Imagine que estamos aplicando uma busca binária em um conjunto de dados de 100 elementos, ou seja, temos um algoritmo
+	logarítmico de base 2, cujo o tamanho do problema é 100. Seguindo a lógica de definição de logaritmos, nesse problema
+ 	estamos querendo saber quantas vezes eu devo multiplicar o 2 por si mesmo, para que tenhamos o valor 100. Então,
+	teremos log¹⁰⁰2 = x, cujo o resultado é aproximadamente 7. Isso significa que o algoritmo levará 7 etapas até encontrar
+	uma resposta.
+
+	Perceba que, em comparação com um algoritmo linear, como a busca sequencial, o número de etapas é muito menor. No caso
+	de um algoritmo linear, ele levará 100 etapas no pior caso e em média 50 etapas. Ou seja, mesmo em seu cenário médio 
+	um algoritmo linear é muito inferior em quesito eficiência, em comparação com um algoritmo logarítmico.
+
+	Fica claro, então, que um logaritmo de um número cresce muito mais devagar do que o próprio número!
+
+
+Finalizando:
+
+	Então podemos concluir que um algoritmo logarítmico é um que tem sua complexidade de tempo definida como o logaritmo 
+	do tamanho do problema. Também ficou fácil identificar, através do nosso exemplo, que um logaritmo de um número será
+	sempre menor do que o próprio número, além de crescer muito mais devagar em relação a ele. 
+
+	
