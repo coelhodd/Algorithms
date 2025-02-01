@@ -54,3 +54,71 @@ Algoritmo de Busca Linear:
       tipo de ordem(como numérica, alfabética, etc...). Quando um conjunto de dados é ordenado, um outro algoritmo de busca é
       mais eficiente(o de busca binária), que veremos a seguir.
 
+--
+
+Algoritmo de Busca Binária:
+   
+   A ideia de um algoritmo de busca binária é dividir o conjunto de dados em metades, e continuar sua análise a partir daí. Por
+   exemplo:
+
+      1- Dividir o conjunto em duas partes, encontrando o valor do meio.
+      2- Verificar se o número do meio é o número procurado. Se for, pode parar. Senão, continue a execução.
+      3- Analisar se o número do meio é menor ou maior que o elemento alvo. Se for menor, descarte todo número
+      menor que o do meio. Se for maior, descarte todo número maior que o do meio.
+      4- Repetir os passos do 1 ao 3, até que seja possível verificar se o elemento alvo está ou não no conjunto. 
+
+   Portanto, vamos exemplificar a execução de um algoritmo de busca binária, em uma situação em que queremos procurar pelo número 9
+   em uma lista numérica de 1 a 10:
+
+      1- Dividir o conjunto em duas partes, identificando o valor do meio(5).
+      2- Verificar se esse número é o procurado(não é).
+      3- O número do meio(5) é menor que o número alvo(9), portanto todo número menor que 5 é descartado.
+      4- Dividir o novo conjunto, identificando o valor do meio(8).
+      5- Verificar se esse número é o procurado(ainda não é).
+      6- O novo número do meio(8) ainda é menor que o número alvo(9), portanto todo número menor que 8 é descartado.
+      7- Dividir o novo conjunto, identificando o valor do meio(9, porque o índice é arredondado para baixo).
+      8- Verificar se esse número é o procurado(é).
+      9- Fim de execução.
+
+   Na linguagem Python, eis como um algoritmo de busca binária é apresentado:
+
+      def binary_search(list, element):
+         first = 0
+	 last = len(list) - 1
+
+	 while last >= first:
+	    middle = (first + last) // 2
+	    if middle == element:
+	        return True
+            else:
+		if element < list[mid]:
+		   last = mid - 1
+		else:
+		   first = mid + 1
+         return False
+
+   Alguns pontos importantes do código acima devem ser mencionados. Primeiro, fica evidente que estamos trabalhando com índices na 
+   maior parte do tempo, e não com os elementos da lista em si(apenas em partes específicas para comparações). Isso é tão verdade que
+   foi necessário estipular duas variáveis para segurar os valores do primeiro e do último elemento da lista. O motivo para isso é que
+   o tamanho da lista irá diminuir a cada iteração, já que o algoritmo precisa dividir o conjunto de dados em partes menores, para 
+   realizar seu trabalho.
+   
+   Segundo, todo o processo de comparação e alteração do tamanho da lista é feito dentro do loop. Em outras palavras, as ações
+   repetitivas do conceito do algoritmo, como a comparação do elemento do meio e a alteração do tamanho da lista, ocorrem dentro do 
+   loop.
+
+   Terceiro, os valores das variáveis são alterados de forma dinâmica, ou seja, a cada iteração o tamanho da lista será alterado, e
+   no início da iteração o novo valor do meio será estipulado.
+
+   Por fim, se o processo no loop não encontra um valor True, ou seja, o elemento alvon não foi encontrado, ele retornará False, 
+   inevitavelmente.
+
+   
+   Quando usar a busca binária:
+      A busca binária é muito utilizada e eficiente quando temos um conjunto de dados ordenado(em ordem numérica, alfabética, etc).
+      Porém, por causa da sua eficiência com conjuntos de dados muito grandes, pode ser que seja vantajoso ordenar todo o conjunto
+      para poder usufruir de um algoritmo binário!
+
+      
+
+   
