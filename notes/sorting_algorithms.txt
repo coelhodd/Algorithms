@@ -1,0 +1,16 @@
+Como um cientista da computação, além de procurar dados em conjuntos de dados, com muita frequência é também necessário ordenar
+os dados em uma ordem específica. Ordenar dados, na verdade, significa coloca-los de maneira significativa, ou seja, significa
+dispor os dados de formas específicas que vão de interesse ao contexto.
+
+Assim como os algoritmos de busca, existem diversas ferramentas já embutidas na própria linguagem Python que executam o 
+funcionamento de um algoritmo de ordenação. Apesar disso, é importante conhecer os algoritmos afundo, tanto para compreender
+melhor o conceito, para também utiliza-los caso necessário. Mas, na maior parte do tempo, utilizaremos os algoritmos embutidos
+e não os programaremos do zero, no dia a dia de um programador/cientista.
+
+Aliás, existem muitos algoritmos de ordenação disponíveis. Cada um deles possuem vantagens e desvantagens, e são bons de acordo
+com o contexto. Mas o fato de ter muitos algoritmos de ordenação(assim como de busca), não significa que iremos utilizar todos.
+É importante, porém, ter uma noção geral do conceito de ordenação na computação e algoritmos.
+
+--
+
+Algoritmo Bubble Sort:
