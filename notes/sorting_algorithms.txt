@@ -14,3 +14,78 @@ com o contexto. Mas o fato de ter muitos algoritmos de ordenação(assim como de
 --
 
 Algoritmo Bubble Sort:
+	
+	O algoritmo bubble sort(ordenação por bolha) é uma algoritmo de ordenação no qual comparamos todos os elementos entre si,
+	reordenando de acordo com a necessidade. Por exemplo, pode ser do nosso interesse dispor números em ordem decrescente, 
+	uma lista de palavras em ordem alfabética, etc. Note que o conceito chave é "comparar todos os elementos entre si", ou
+	seja, cada elemento é comparado com todos os outros elementos do conjunto de dados(comparação elemento por elemento).
+
+	Digamos que você tivesse a lista a seguir e quisesse ordernar os números de forma crescente:
+
+		[32, 1, 9, 6]
+
+	Para iniciar o algoritmo, compararíamos o número 32 com 1, onde 32 não está na ordem correta. Portanto, trocaríamos 
+	ambos os números de lugar, ficando com:
+
+		[1, 32, 9, 6]
+
+	Em seguida, como não saímos do número 32 ainda, faríamos a comparação com o próximo elemento, que é o 9. A ordem também 
+	está trocada, portanto trocaremos novamente:
+
+		[1, 9, 32, 6]
+	
+	Por fim, como ainda não saímos do número 32, novamente faríamos a comparação entre ele e o próximo elemento. Como ambos
+	não estão na ordem correta, teríamos por fim:
+
+		[1, 9, 6, 32]
+
+	Como você pode reparar, a lista ainda não está na ordem correta. Como não há nenhum número para comparar com o 32, 
+	o algoritmo começa novamente do início, que agora é ocupado pelo número 1:
+
+		[1, 9, 6, 32]
+
+	Nada acontece porque o número 1 é menor do que o 9, portanto está no lugar certo. O algoritmo então pula para o próximo:
+	
+		[1, 6, 9, 32]
+
+	Como ele comparou 9 com 6, corretamente identificando que a ordem não é a ideal, ocorreu a troca. Por fim temos, então,
+	uma lista ordenada de forma crescente.
+
+	--
+
+	Temos uma exemplo de um algoritmo bubble sort no arquivo bubble_sort.py. Perceba que um algoritmo bubble sort deverá 
+	conter sempre um loop aninhado. Isso significa que um algoritmo bubble sort tem sua complexidade de tempo quadrática. 
+	Como vimos em outras anotações, essa complexidade de tempo não é das mais eficientes. Isso faz com que bubble sort seja
+	um algoritmo não tão aplicado no mundo real, já que existem outros com complexidade de tempo melhores.
+
+	Relembrando:
+
+		O que significa o fato de um algoritmo ter sua complexidade de tempo quadrática? 
+
+			Significa que o número de etapas cresce de acordo com o quadrado do tamanho do problema. Ou seja, caso
+			o tamanho do problema seja 10, teremos 100 etapas, e por aí vai. Note que essa ordem de grandeza crescerá
+			rapidamente com o tamanho do problema, ficando inviável em pouco tempo.
+
+
+	O algoritmo bubble sort tem algumas peculiaridades que podemos ver no arquivo bubble_sort.py. Temos duas formas de 
+	escrever um algoritmo bubble sort: De forma menos eficiente, e de forma mais eficiente. 
+
+--
+
+Estabilidade de ordenação:
+
+	Quando falamos de ordenação, temos um conceito interessante que deve ser levado em conta: O de ordenação estável. 
+	
+	Uma ordenação estável é um tipo de ordenação que deixa os elementos na mesma ordem inicial, quando suas chaves possuem
+	o mesmo peso de comparação. Por exemplo, digamos que em um algoritmo de ordenação estamos comparando palavras pela sua
+	letra inicial, cujo as palavras em questão são 'banana' e 'bebe', nessa ordem. Como estamos estabelecendo uma ordem 
+	através da primeira letra(a chave), uma ordenação estável manteria a ordem inicial(banana, bebe). Já um algoritmo 
+	instável alteraria a ordem inicial(bebe, banana). 
+
+	Um algoritmo bubble sort é um algoritmo de ordenação estável.
+
+--
+
+Algoritmo Insertion Sort:
+
+	
