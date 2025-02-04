@@ -87,5 +87,54 @@ Estabilidade de ordenação:
 --
 
 Algoritmo Insertion Sort:
-
 	
+	O algoritmo insertion sort é também um algoritmo de ordenação, mas que funciona de forma diferente que o bubble sort.
+
+	Esse algoritmo define duas partes de um conjunto de dados: Uma parte já ordenada na esquerda, e uma parte desordenada na
+	direita. A execução do algoritmo faz com que cada primeiro elemento da parte desordenada seja adicionado à parte ordenada
+	e comparado com cada elemento adjacente, para que seja encontrado seu local ideal.
+
+	Por exemplo, imagine que temos a seguinte lista, e queremos uma ordem crescente:
+
+		[5, 4, 3, 2]
+
+	Como vimos, primeiro estabelecemos uma parte ordenada(que não necessariamente precisa estar correta) e uma parte
+	desordenada. No caso, o primeiro elemento da lista é o primeiro elemento da parte ordenada e o resto pertence aos
+	elementos não ordenados. Então, no caso da lista acima, apenas o 5 está "ordenado", enquanto todos os outros não estão.
+
+	Seguindo o algoritmo, iniciamos do segundo elemento, que no caso é o 4. Comparamos então o 4 com todos os números
+	anteriores que ele. Quando essa comparação chegar ou no primeiro elemento, ou quando o 4 for menor que o número anterior,
+	a comparação prossegue para o próximo elemento não ordenado.
+
+		[4, 5, 3, 2]
+
+	Como havia apenas um número antes do nosso elemento atual(4) e 5 > 4, o número 4 ficou no lugar do 5.
+
+	Continuando com o número 3, devemos comparar esse valor com todos os seus valores anteriores. Enquanto não chegarmos no
+	primeiro elemento da lista, ou os elementos anteriores forem maior que o atual(3), a comparação continua. Então, como
+	5 é menor que 3 e 4 também é, e não há mais nenhum número para comparação, o 3 é colocado no local do 4.
+
+	Por fim, o número 2 é comparado com os números à direita, sendo colocado no local do 3.
+
+		[2, 3, 4, 5]
+
+	Perceba que um algoritmo insertion sort não trabalha com trocas de elementos como um algoritmo bubble sort. Ele compara
+	elementos entre si, e uma vez identificado o local apropriado para o valor atual, ele o coloca ali "empurrando" todos
+	os outros elementos para a direita.
+
+	--
+
+	Quando utilizar o algoritmo insertion sort:
+
+		Como é possível verificar, o algoritmo insertion sort possui um loop aninhado, assim como um algoritmo bubble 
+		sort. Isso faz com que sua complexidade de tempo seja naturalmente quadrática, ou seja, não tão eficiente.
+
+		Há um porém quando falamos de insertion sort: Quando temos uma situação em que nossos conjuntos de dados estão
+		quase ou totalmente ordenados, é possível que ele seja eficiente ao ponto de passar a ser linear.
+		
+		Por exemplo, na lista [1, 2, 3, 4, 5], o algoritmo só iria passar por ela uma vez, ou seja contendo o número de 
+		etapas equivalente ao número de elementos. Da mesma forma, a lista [1, 2, 3, 5, 4] também faria com que o 
+		algoritmo insertion sort seja liner, já que o loop interno do é executado quando 2 elementos estão fora de ordem.
+
+		Apesar disso, um algoritmo insertion sort ainda não é tão eficiente ao ponto de ser amplamente utilizado quando
+		falamos de ordenação por ter sua complexidade quadrática.
