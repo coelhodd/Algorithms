@@ -168,6 +168,17 @@ Algoritmo Merge Sort:
 	cada elemento da lista para ordena-los de acordo, resultand em uma complexidade linear. 
 
 
+Finalizando:
+
+	Por fim, devemos voltar a ideia de que não é exatamente necessário a codificação do zero de algoritmos como os de 
+	ordenação, já que Python já tem algoritmos embutidos em sua linguagem através de funções.
+	
+	Por exemplo, Python tem duas funções que fazem o papel da ordenação em iteráveis: sort() e sorted(). Ambas as funções 
+	utilizam um algoritmo híbrido chamado Timsort, que é uma combinação de insertion sort e merge sort. Essa combinação dos
+	dois algoritmos resulta em uma eficiência maior do que os dois separados. Portanto, na maior parte do tempo e no dia a dia
+	utilizaremos as duas funções próprias de Python.
+
+
 
 
 
