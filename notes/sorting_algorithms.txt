@@ -138,3 +138,38 @@ Algoritmo Insertion Sort:
 
 		Apesar disso, um algoritmo insertion sort ainda não é tão eficiente ao ponto de ser amplamente utilizado quando
 		falamos de ordenação por ter sua complexidade quadrática.
+
+--
+
+Algoritmo Merge Sort:
+
+	Como o algoritmo merge sort é relativamente extenso, não acho que seria conveniente coloca-lo nessas anotações. Será 
+	possível verificar um exemplo de código merge sort no arquivo merge_sort.py. 
+	
+	O algoritmo merge sort se baseia na seguinte ideia: Dividir um conjunto de dados em metades, até que o resultado seja
+	apenas os elementos individuais do conjunto. O motivo para isso é que, uma lista contendo apenas um elemento é 
+	considerado ordenado. Uma vez que tenhamos apenas os elementos individuais, compararemos os valores e recriar o conjunto
+	com os valores ordenados da forma como seja necessária. 
+
+	Essencialmente, o algoritmo merge sort se baseia apenas nesse processo. Ele é um pouco mais complexo, porém, já que a 
+	chave para o seu funcionamento é a recursão, ou seja, a função que contém o algoritmo chama a si mesma para realizar o 
+	processo dos dados.
+
+	De novo: O algoritmo para análise pode ser encontrado no arquivo merge_sort.py
+
+	É importante saber que o algoritmo merge sort é da classe de algoritmos de divisão e conquista(divide and conquer). Esses
+	algoritmos funcionam através do seguinte conceito: Dividir um problema complicado em subproblemas cada vez menores, até
+	que tenhamos partes mais facilmente manipuláveis. Perceba que, no caso desse algoritmo de ordenação, fazemos exatamente
+	isso. Dividimos o conjunto de dados em partes menores, até que sobre apenas um elemento, de depois ordenamos esses 
+	elementos individuais, por fim resolvendo o problema maior.
+
+	Por fim, o algoritmo merge sort possui complexidade de tempo como O(n x log n). O motivo para isso é que, apesar de
+	a divisão do conjunto de dados em metades resulta em uma complexidade logarítmica, o algoritmo ainda precisa manipular 
+	cada elemento da lista para ordena-los de acordo, resultand em uma complexidade linear. 
+
+
+
+
+
+
+
