@@ -1,10 +1,13 @@
 def merge_sort(a_list):
     if len(a_list) > 1:
+        # sorting part
         mid = len(a_list) // 2
         left_half = a_list[:mid]
         right_half = a_list[mid:]
         merge_sort(left_half)
         merge_sort(right_half)
+
+        # merging of sorted halfs part 
         left_ind = 0
         right_ind = 0
         alist_ind = 0
@@ -31,7 +34,5 @@ def merge_sort(a_list):
 
 
 arr = [6, 3, 9, 2]
-
 merge_sort(arr)
-
 print(arr)
